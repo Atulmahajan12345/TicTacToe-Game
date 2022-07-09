@@ -58,113 +58,113 @@ public class TicTacToeGame {
 	private static int computerMove(char[] board, char computerSymbol) {
 		int compMark = 0 ;
 		//					Row 1
-		if (board[1] == board[2]  && board[1] == computerSymbol && board[3] == '-' )
+		if (board[1] == board[2]  && board[1] != '-' && board[3] == '-' )
 		{
 			board[3] = computerSymbol;
 		}
-		else if (board[1] == board[3] && board[1] == computerSymbol && board[2] == '-')
+		else if (board[1] == board[3] && board[1] != '-' && board[2] == '-')
 		{
 			board[2] = computerSymbol;
 		}
-		else if (board[2] == board[3] && board[2] == computerSymbol && board[1] == '-')
+		else if (board[2] == board[3] && board[2] != '-' && board[1] == '-')
 		{
 			board[1] = computerSymbol;
 		}
 		
 		//Row 2 
-		else if (board[4] == board[5] && board[4] == computerSymbol && board[6] == '-' )
+		else if (board[4] == board[5] && board[4] != '-' && board[6] == '-' )
 		{
 			board[6] = computerSymbol;
 		}
-		else if (board[4] == board[6] && board[4] == computerSymbol && board[5] == '-' )
+		else if (board[4] == board[6] && board[4] != '-' && board[5] == '-' )
 		{
 			board[5] = computerSymbol;
 		}
-		else if (board[6] == board[5] && board[5] == computerSymbol && board[4] == '-' )
+		else if (board[6] == board[5] && board[5] != '-' && board[4] == '-' )
 		{
 			board[4] = computerSymbol;
 		}
 		
 		//Row 3
-		else if ((board[7] == board[8] && board[7] == computerSymbol && board[9] == '-'))
+		else if ((board[7] == board[8] && board[7] != '-' && board[9] == '-'))
 		{
 			board[9] = computerSymbol;
 		}
-		else if ((board[7] == board[9] && board[7] == computerSymbol && board[8] == '-'))
+		else if ((board[7] == board[9] && board[7] != '-' && board[8] == '-'))
 		{
 			board[8] = computerSymbol;
 		}
-		else if ((board[8] == board[9] && board[8] == computerSymbol && board[7] == '-'))
+		else if ((board[8] == board[9] && board[8] != '-' && board[7] == '-'))
 		{
 			board[7] = computerSymbol;
 		}
 		
 		//Col 1
-		else if ((board[1] == board[4] && board[1] == computerSymbol && board[7] == '-'))
+		else if ((board[1] == board[4] && board[1] != '-' && board[7] == '-'))
 		{
 			board[7] = computerSymbol;
 		}
-		else if ((board[1] == board[7] && board[1] == computerSymbol && board[4] == '-'))
+		else if ((board[1] == board[7] && board[1] != '-' && board[4] == '-'))
 		{
 			board[4] = computerSymbol;
 		}
-		else if ((board[7] == board[4] && board[7] == computerSymbol && board[1] == '-'))
+		else if ((board[7] == board[4] && board[7] != '-' && board[1] == '-'))
 		{
 			board[1] = computerSymbol;
 		}
 		
 		//Col 2
-		else if ((board[2] == board[5] && board[2] == computerSymbol && board[8] == '-'))
+		else if ((board[2] == board[5] && board[2] != '-' && board[8] == '-'))
 		{
 			board[8] = computerSymbol;
 		}
-		else if ((board[2] == board[8] && board[2] == computerSymbol && board[5] == '-'))
+		else if ((board[2] == board[8] && board[2] != '-' && board[5] == '-'))
 		{
 			board[5] = computerSymbol;
 		}
-		else if ((board[5] == board[8] && board[5] == computerSymbol && board[2] == '-'))
+		else if ((board[5] == board[8] && board[5] != '-' && board[2] == '-'))
 		{
 			board[2] = computerSymbol;
 		}
 		
 		//Col3
-		else if ((board[3] == board[6] && board[3] == computerSymbol && board[9] == '-'))
+		else if ((board[3] == board[6] && board[3] != '-' && board[9] == '-'))
 		{
 			board[9] = computerSymbol;
 		}
-		else if ((board[3] == board[9] && board[3] == computerSymbol && board[6] == '-' ))
+		else if ((board[3] == board[9] && board[3] != '-' && board[6] == '-' ))
 		{
 			board[6] = computerSymbol;
 		}
-		else if ((board[6] == board[9] && board[6] == computerSymbol && board[3] == '-'))
+		else if ((board[6] == board[9] && board[6] != '-' && board[3] == '-'))
 		{
 			board[3] = computerSymbol;
 		}
 
 		//Diagonal left 2 right
-		else if ((board[1] == board[5] && board[1] == computerSymbol && board[9] == '-' ))
+		else if ((board[1] == board[5] && board[1] != '-' && board[9] == '-' ))
 		{
 			board[9] = computerSymbol;
 		}
-		else if ((board[1] == board[9] && board[1] == computerSymbol && board[5] == '-' ))
+		else if ((board[1] == board[9] && board[1] != '-' && board[5] == '-' ))
 		{
 			board[5] = computerSymbol;
 		}
-		else if ((board[5] == board[9] && board[5] == computerSymbol && board[1] == '-'))
+		else if ((board[5] == board[9] && board[5] != '-' && board[1] == '-'))
 		{
 			board[1] = computerSymbol;
 		}
 
 		//Diagonal right 2 left
-		else if ((board[3] == board[5] && board[3] == computerSymbol && board[7] == '-'))
+		else if ((board[3] == board[5] && board[3] != '-' && board[7] == '-'))
 		{
 			board[7] = computerSymbol;
 		}
-		else if ((board[7] == board[5] && board[7] == computerSymbol && board[3] == '-'))
+		else if ((board[7] == board[5] && board[7] != '-' && board[3] == '-'))
 		{
 			board[3] = computerSymbol;
 		}
-		else if ((board[7] == board[3] && board[7] == computerSymbol && board[5] == '-'))
+		else if ((board[7] == board[3] && board[7] != '-' && board[5] == '-'))
 		{
 			board[5] = computerSymbol;
 		}
