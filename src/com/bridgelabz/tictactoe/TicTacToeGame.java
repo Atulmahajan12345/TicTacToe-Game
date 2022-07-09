@@ -10,8 +10,29 @@ public class TicTacToeGame
 		char[] board = createBoard();
 		System.out.println("Enter The Symbol which you want i.e. X or O");
 		char playerSymbol = scanner.next().toUpperCase().charAt(0);
-		scanner.close();
 		char computerSymbol = determineComputerSymbol(playerSymbol);
+		displayBoard(board);
+		playerMove(scanner, board, playerSymbol);
+		scanner.close();
+	}
+
+	private static void playerMove(Scanner scanner, char[] board, char playerSymbol) 
+	{
+		boolean playerTurn = true;
+		while(playerTurn) 
+		{
+			System.out.println("Enter the Symbol where you want to place your "+playerSymbol);
+			int playerMove = scanner.nextInt();
+			if(board[playerMove] == '-')
+			{
+				board[playerMove] = playerSymbol;
+				playerTurn = false;
+			}
+			else
+			{
+				System.out.println("The mark location is not free");
+			}
+		}
 		displayBoard(board);
 	}
 
