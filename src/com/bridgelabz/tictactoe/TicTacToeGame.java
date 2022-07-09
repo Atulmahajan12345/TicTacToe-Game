@@ -12,8 +12,28 @@ public class TicTacToeGame
 		char playerSymbol = scanner.next().toUpperCase().charAt(0);
 		char computerSymbol = determineComputerSymbol(playerSymbol);
 		displayBoard(board);
-		playerMove(scanner, board, playerSymbol);
+		while(checkFreeSpace(board))
+		{			
+			playerMove(scanner, board, playerSymbol);
+		}
 		scanner.close();
+	}
+
+	private static boolean checkFreeSpace(char[] board) {
+		boolean isFreeSpace = true;
+		int numberOfFreeSpace = 0;
+		for (int index = 1; index < board.length; index++)
+		{
+			if(board[index]== '-')
+			{
+				numberOfFreeSpace++;
+			}
+		}
+		if(numberOfFreeSpace == 0)
+		{
+			isFreeSpace=false;
+		}
+		return isFreeSpace;
 	}
 
 	private static void playerMove(Scanner scanner, char[] board, char playerSymbol) 
@@ -65,6 +85,7 @@ public class TicTacToeGame
 		else
 		{
 			System.err.println("You inserted a wrong Symbol");
+			
 		}
 		return computerSymbol;
 	}
