@@ -5,15 +5,38 @@ import java.util.Scanner;
 public class TicTacToeGame {
 	public static void main(String[] args)
 	{
-		Scanner scanner = new Scanner(System.in);		
+		Scanner scanner = new Scanner(System.in);
+		boolean gameOver = false;
+		while(true) 
+		{
+			if(!gameOver) 
+			{
+				gameOver = gameOn(scanner, gameOver);
+			}
+			else
+			{
+				System.out.println("Do you want to play again y/n");
+				int playerDecision = scanner.next().toUpperCase().charAt(0);
+				if(playerDecision == 'Y')
+				{
+					gameOver = false;
+				}
+				else
+				{
+					System.out.println("Thanks for playing");
+					break;
+				}
+			}
+		}
+	}
+
+	private static boolean gameOn(Scanner scanner, boolean gameOver) {
 		char[] board = createBoard();
 		System.out.println("Enter The Symbol which you want i.e. X or O");
 		char playerSymbol = scanner.next().toUpperCase().charAt(0);
 		char computerSymbol = determineComputerSymbol(playerSymbol);
 		displayBoard(board);
 		boolean playerTurn = toss();
-
-		System.out.println(board[1]);
 		while(true)
 		{	
 			char winner = win(board);
@@ -22,10 +45,12 @@ public class TicTacToeGame {
 				if(playerSymbol == winner)
 				{					
 					System.out.println("Player Won ");
+					gameOver = true;
 				}
 				else
 				{
 					System.out.println("Computer Won");
+					gameOver = true;
 				}
 				System.out.println("Game Over");
 				break;
@@ -49,11 +74,12 @@ public class TicTacToeGame {
 			else
 			{
 				System.out.println("The game Tie \n Game Over");
+				gameOver = true;
 				break;
 
 			}
 		}
-		scanner.close();
+		return gameOver;
 	}
 
 	private static int computerMove(char[] board, char computerSymbol) {
